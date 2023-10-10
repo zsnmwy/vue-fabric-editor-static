@@ -1,0 +1,14 @@
+:80 {
+	handle * {
+		encode gzip
+		file_server
+		root * /app
+		header {
+			Access-Control-Allow-Origin "*"
+			Access-Control-Allow-Methods "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+			Access-Control-Allow-Headers *
+			Access-Control-Max-Age "3600"
+			defer
+		}
+	}
+}
